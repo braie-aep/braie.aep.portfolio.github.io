@@ -1,12 +1,11 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #000;
@@ -14,43 +13,31 @@ body {
   line-height: 1.7;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   LAYOUT
-========================= */
 section {
   padding: 90px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-h1 {
-  font-size: 56px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+h1 { font-size: 56px; margin-bottom: 10px; }
+h2 { font-size: 36px; margin-bottom: 30px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
 
 p {
   color: #ccc;
   margin-bottom: 12px;
 }
 
-/* =========================
-   HERO
-========================= */
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* HERO */
 .hero {
   padding: 120px 20px 90px;
 }
@@ -62,69 +49,47 @@ p {
   flex-wrap: wrap;
 }
 
+/* PROFILE IMAGE */
 .profile-img {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: #111;
+  object-fit: cover;
   border: 2px solid #00ffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-  font-size: 14px;
-  flex-shrink: 0;
+  background: #111;
 }
 
-.hero h3 {
-  color: #aaa;
-}
-
-/* =========================
-   PORTFOLIO GRID
-========================= */
+/* GRID */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-/* =========================
-   CLICKABLE CARD
-========================= */
-.card-link {
-  display: block;
-  height: 100%;
-}
-
+/* PROJECT CARD */
 .project {
-  height: 100%;
   border: 1px solid #222;
   padding: 20px;
   border-radius: 14px;
   background: linear-gradient(180deg, #0a0a0a, #000);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.28);
+  box-shadow: 0 0 25px rgba(0,255,255,0.25);
 }
 
-/* Disable iframe interaction so whole card is clickable */
+/* VIDEO */
 iframe {
   width: 100%;
   height: 200px;
   border-radius: 12px;
   margin-bottom: 15px;
   border: none;
-  pointer-events: none;
 }
 
-/* =========================
-   PREVIEW CARDS
-========================= */
+/* PREVIEW CARDS */
 .preview-box {
   height: 200px;
   border-radius: 12px;
@@ -134,8 +99,6 @@ iframe {
   font-size: 52px;
   font-weight: bold;
   margin-bottom: 18px;
-  background: #111;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .youtube .preview-box {
@@ -156,14 +119,7 @@ iframe {
   text-transform: uppercase;
 }
 
-.project:hover .preview-box {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
-}
-
-/* =========================
-   SERVICES
-========================= */
+/* SERVICES */
 .service {
   margin-bottom: 28px;
 }
@@ -172,17 +128,7 @@ iframe {
   color: #00ffff;
 }
 
-/* =========================
-   CONTACT
-========================= */
-section a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -191,25 +137,10 @@ footer {
   font-size: 14px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  h2 {
-    font-size: 28px;
-  }
-
-  .hero-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .profile-img {
-    width: 130px;
-    height: 130px;
-  }
+  h1 { font-size: 42px; }
+  h2 { font-size: 28px; }
+  .hero-wrap { flex-direction: column; align-items: flex-start; }
+  .profile-img { width: 130px; height: 130px; }
 }
