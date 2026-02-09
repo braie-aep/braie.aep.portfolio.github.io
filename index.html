@@ -35,19 +35,38 @@
     }
 
     h1, h2, h3 {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     p {
       color: #ccc;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     /* HERO */
     .hero {
-      min-height: 100vh;
+      padding: 120px 20px 80px;
+    }
+
+    .hero-wrap {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #111;
+      border: 2px solid #0ff;
       display: flex;
       align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 14px;
+      flex-shrink: 0;
     }
 
     .hero h1 {
@@ -69,25 +88,25 @@
     .project {
       border: 1px solid #222;
       padding: 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
     .project:hover {
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      box-shadow: 0 0 20px rgba(0,255,255,0.25);
       transform: translateY(-5px);
     }
 
     iframe {
       width: 100%;
       height: 200px;
-      border-radius: 6px;
+      border-radius: 8px;
       margin-bottom: 15px;
     }
 
     /* SERVICES */
     .service {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     /* FOOTER */
@@ -103,10 +122,14 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div>
-      <h1>Lee</h1>
-      <h3>Video Editor</h3>
-      <p>Visual storytelling through camera and cut.</p>
+    <div class="hero-wrap">
+      <div class="profile-img">Profile Photo</div>
+
+      <div>
+        <h1>Lee</h1>
+        <h3>Video Editor</h3>
+        <p>Visual storytelling through camera and cut.</p>
+      </div>
     </div>
   </section>
 
@@ -155,9 +178,18 @@
 
       <div class="project">
         <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=bobtalkies"></iframe>
-        <h3>Bob Talkies</h3>
+        <h3>Bob Talkies (YouTube)</h3>
         <p>
           Video editing for a YouTube channel with clean and engaging episodic edits.
+        </p>
+      </div>
+
+      <div class="project">
+        <iframe src="https://www.instagram.com/the_bitstudio/embed"></iframe>
+        <h3>Bit Studio (Instagram)</h3>
+        <p>
+          Architecture-focused Instagram edits showcasing interior, exterior, and
+          design projects.
         </p>
       </div>
 
@@ -217,4 +249,3 @@
 
 </body>
 </html>
-
