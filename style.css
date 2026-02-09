@@ -1,29 +1,27 @@
-/* RESET */
+/* =========================
+   RESET & BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
 body {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #000;
   color: #fff;
   line-height: 1.7;
 }
 
 a {
-  color: #00ffff;
+  color: inherit;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-a:hover {
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
 section {
   padding: 90px 20px;
   max-width: 1100px;
@@ -31,7 +29,7 @@ section {
 }
 
 h1 {
-  font-size: 58px;
+  font-size: 56px;
   margin-bottom: 10px;
 }
 
@@ -47,11 +45,12 @@ h3 {
 
 p {
   color: #ccc;
-  font-size: 16px;
   margin-bottom: 12px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   padding: 120px 20px 90px;
 }
@@ -67,44 +66,104 @@ p {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #00ffff;
   background: #111;
+  border: 2px solid #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
 .hero h3 {
   color: #aaa;
 }
 
-/* PORTFOLIO */
+/* =========================
+   PORTFOLIO GRID
+========================= */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
+/* =========================
+   CLICKABLE CARD
+========================= */
+.card-link {
+  display: block;
+  height: 100%;
+}
+
 .project {
+  height: 100%;
   border: 1px solid #222;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: linear-gradient(180deg, #0a0a0a, #000);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 .project:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0,255,255,0.25);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.28);
 }
 
+/* Disable iframe interaction so whole card is clickable */
 iframe {
   width: 100%;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 15px;
   border: none;
+  pointer-events: none;
 }
 
-/* SERVICES */
+/* =========================
+   PREVIEW CARDS
+========================= */
+.preview-box {
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  background: #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube .preview-box {
+  background: linear-gradient(135deg, #1a0000, #000);
+  color: #ff0000;
+}
+
+.instagram .preview-box {
+  background: linear-gradient(135deg, #2b0033, #000);
+  color: #e1306c;
+}
+
+.platform {
+  font-size: 13px;
+  color: #00ffff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project:hover .preview-box {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+}
+
+/* =========================
+   SERVICES
+========================= */
 .service {
   margin-bottom: 28px;
 }
@@ -113,12 +172,17 @@ iframe {
   color: #00ffff;
 }
 
-/* CONTACT */
-section a {
-  font-weight: 500;
+/* =========================
+   CONTACT
+========================= */
+section a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -127,7 +191,9 @@ footer {
   font-size: 14px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
