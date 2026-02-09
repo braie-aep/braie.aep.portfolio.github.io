@@ -4,174 +4,273 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lee | Video Editor</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 90px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 { font-size: 56px; margin-bottom: 10px; }
+    h2 { font-size: 36px; margin-bottom: 30px; }
+    h3 { font-size: 20px; margin-bottom: 10px; }
+
+    p {
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 120px 20px 90px;
+    }
+
+    .hero-wrap {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #111;
+      border: 2px solid #00ffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      flex-shrink: 0;
+    }
+
+    .hero h3 { color: #aaa; }
+
+    /* GRID */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    /* CLICKABLE CARD */
+    .card-link {
+      display: block;
+      height: 100%;
+    }
+
+    .project {
+      height: 100%;
+      border: 1px solid #222;
+      padding: 20px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #0a0a0a, #000);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0,255,255,0.25);
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border: none;
+      pointer-events: none; /* IMPORTANT */
+    }
+
+    /* PREVIEW BOX */
+    .preview-box {
+      height: 200px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .youtube .preview-box {
+      background: linear-gradient(135deg, #1a0000, #000);
+      color: #ff0000;
+    }
+
+    .instagram .preview-box {
+      background: linear-gradient(135deg, #2b0033, #000);
+      color: #e1306c;
+    }
+
+    .platform {
+      font-size: 13px;
+      color: #00ffff;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* SERVICES */
+    .service { margin-bottom: 28px; }
+    .service h3 { color: #00ffff; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 { font-size: 42px; }
+      h2 { font-size: 28px; }
+      .hero-wrap { flex-direction: column; align-items: flex-start; }
+      .profile-img { width: 130px; height: 130px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-wrap">
-      <img src="assets/profile.jpg" alt="Lee profile photo" class="profile-img">
-
-      <div>
-        <h1>Lee</h1>
-        <h3>Video Editor</h3>
-        <p>Visual storytelling through camera and cut.</p>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="profile-img">Profile</div>
+    <div>
+      <h1>Lee</h1>
+      <h3>Video Editor</h3>
+      <p>Visual storytelling through camera and cut.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me</h2>
-    <p>🎬 Videographer | Photographer | Video & Photo Editor</p>
-    <p>Podcasts · Short Films · Branding · Weddings</p>
-    <p>
-      I create clean, cinematic visuals—from shooting to final edit—focused on
-      quality, emotion, and storytelling.
-    </p>
-  </section>
+<!-- ABOUT -->
+<section>
+  <h2>About Me</h2>
+  <p>🎬 Videographer | Photographer | Video & Photo Editor</p>
+  <p>Podcasts · Short Films · Branding · Weddings</p>
+  <p>
+    I create clean, cinematic visuals—from shooting to final edit—focused on
+    quality, emotion, and storytelling.
+  </p>
+</section>
 
-  <!-- PORTFOLIO -->
-  <section>
-    <h2>Portfolio</h2>
+<!-- PORTFOLIO -->
+<section>
+  <h2>Portfolio</h2>
 
-    <div class="portfolio-grid">
+  <div class="portfolio-grid">
 
-      <!-- Project Malar -->
+    <!-- Project Malar -->
+    <a class="card-link" href="https://drive.google.com/file/d/1EL0lZlIwDCcKVOv9Udh2NYaz9KMr04TB/view" target="_blank">
       <div class="project">
-        <iframe src="https://drive.google.com/file/d/1EL0lZlIwDCcKVOv9Udh2NYaz9KMr04TB/preview" allow="autoplay"></iframe>
+        <iframe src="https://drive.google.com/file/d/1EL0lZlIwDCcKVOv9Udh2NYaz9KMr04TB/preview"></iframe>
         <h3>Project Malar</h3>
-        <p>
-          Project Malar documents a philanthropic initiative empowering independent
-          women through free auto support.
-        </p>
+        <p>Project documenting a philanthropic initiative empowering independent women.</p>
       </div>
+    </a>
 
-      <!-- CRPF -->
+    <!-- CRPF -->
+    <a class="card-link" href="https://drive.google.com/file/d/19ufBOiV-Ys32inx84vJw8GEwKCP4ziUn/view" target="_blank">
       <div class="project">
-        <iframe src="https://drive.google.com/file/d/19ufBOiV-Ys32inx84vJw8GEwKCP4ziUn/preview" allow="autoplay"></iframe>
+        <iframe src="https://drive.google.com/file/d/19ufBOiV-Ys32inx84vJw8GEwKCP4ziUn/preview"></iframe>
         <h3>CRPF</h3>
-        <p>
-          A documentary highlighting a philanthropic initiative supporting wounded
-          CRPF personnel and their families.
-        </p>
+        <p>Documentary supporting wounded CRPF personnel and families.</p>
       </div>
+    </a>
 
-      <!-- Vinnaga Vendha -->
+    <!-- Vinnaga Vendha -->
+    <a class="card-link" href="https://youtu.be/SDQn_BvR6eU" target="_blank">
       <div class="project">
         <iframe src="https://www.youtube.com/embed/SDQn_BvR6eU"></iframe>
         <h3>Vinnaga Vendha</h3>
-        <p>
-          Tamil Christmas music video with devotional and cinematic visuals.
-        </p>
+        <p>Tamil Christmas music video with devotional cinematic visuals.</p>
       </div>
+    </a>
 
-<!-- Bob Talkies (YouTube Profile Card with Preview) -->
-<div class="project">
-  <div style="
-    height:200px;
-    background:#111;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    color:#ff0000;
-    font-weight:bold;
-  ">
-    ▶ YouTube Channel
+    <!-- Bob Talkies -->
+    <a class="card-link" href="https://youtube.com/@bobtalkies" target="_blank">
+      <div class="project youtube">
+        <div class="preview-box">▶</div>
+        <h3>Bob Talkies</h3>
+        <p class="platform">YouTube Channel</p>
+        <p>Clean and engaging episodic edits across multiple episodes.</p>
+      </div>
+    </a>
+
+    <!-- Bit Studio -->
+    <a class="card-link" href="https://www.instagram.com/the_bitstudio" target="_blank">
+      <div class="project instagram">
+        <div class="preview-box">📸</div>
+        <h3>Bit Studio</h3>
+        <p class="platform">Instagram Page</p>
+        <p>Architecture-focused edits showcasing design projects.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2>Services</h2>
+
+  <div class="service">
+    <h3>Video Editing</h3>
+    <p>Long-form and short-form video editing for weddings, documentaries, films, and reels.</p>
   </div>
 
-  <h3 style="margin-top:15px;">Bob Talkies</h3>
-  <p>
-    Video editing for a YouTube channel, delivering clean and engaging
-    episodic edits across multiple episodes.
-  </p>
-  <a href="https://youtube.com/@bobtalkies" target="_blank">
-    Visit Channel →
-  </a>
-</div>
-
-<!-- Bit Studio (Instagram Profile Card with Preview) -->
-<div class="project">
-  <div style="
-    height:200px;
-    background:#111;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    color:#e1306c;
-    font-weight:bold;
-  ">
-    📸 Instagram Page
+  <div class="service">
+    <h3>Photography & Videography</h3>
+    <p>Event photography and videography with a cinematic approach.</p>
   </div>
 
-  <h3 style="margin-top:15px;">Bit Studio</h3>
-  <p>
-    Architecture-focused Instagram edits showcasing interior,
-    exterior, and design projects.
-  </p>
-  <a href="https://www.instagram.com/the_bitstudio" target="_blank">
-    Visit Instagram →
-  </a>
-</div>
+  <div class="service">
+    <h3>Photo Editing & Design</h3>
+    <p>Professional photo editing, thumbnails, mockups, and branding visuals.</p>
+  </div>
 
-    </div>
-  </section>
+  <div class="service">
+    <h3>Visual Branding Videos</h3>
+    <p>Logo animations, intro/outro videos, and branded visuals.</p>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Services</h2>
+<!-- CONTACT -->
+<section>
+  <h2>Contact</h2>
+  <p>Email: braie.aep@gmail.com</p>
+</section>
 
-    <div class="service">
-      <h3>Video Editing</h3>
-      <p>
-        Long-form and short-form video editing including weddings, documentaries,
-        short films, podcasts, reels, and corporate videos.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>Photography & Videography</h3>
-      <p>
-        Event photography and videography with a professional and cinematic approach.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>Photo Editing & Design</h3>
-      <p>
-        Professional photo editing, retouching, thumbnails, mockups, and branding
-        visuals.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>Visual Branding Videos</h3>
-      <p>
-        Logo animations, intro/outro videos, and branded visual assets.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:braie.aep@gmail.com">braie.aep@gmail.com</a></p>
-    <p>
-      <a href="https://www.instagram.com/braie.aep" target="_blank">Instagram</a> |
-      <a href="https://x.com/braie_aep" target="_blank">X / Twitter</a> |
-      <a href="https://www.upwork.com/freelancers/~013e9ac02071e7fe07" target="_blank">Upwork</a> |
-      <a href="https://fiverr.com/s/yvQb63A" target="_blank">Fiverr</a>
-    </p>
-  </section>
-
-  <footer>
-    © 2026 Lee — Visual Storytelling Portfolio
-  </footer>
+<footer>
+  © 2026 Lee — Visual Storytelling Portfolio
+</footer>
 
 </body>
 </html>
