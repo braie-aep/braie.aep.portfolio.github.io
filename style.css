@@ -144,31 +144,3 @@ footer {
   .hero-wrap { flex-direction: column; align-items: flex-start; }
   .profile-img { width: 130px; height: 130px; }
 }
-
-/* SOCIAL ICON BAR – BIGGER */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  padding: 80px 20px;
-}
-
-.social-icons a {
-  width: 72px;          /* BIGGER circle */
-  height: 72px;
-  border-radius: 50%;
-  border: 2px solid #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;      /* BIGGER icon */
-  background: #000;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 25px rgba(0,255,255,0.8);
-  border-color: #0ff;
-}
